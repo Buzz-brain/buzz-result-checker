@@ -149,6 +149,72 @@ const mockResults = [
       ],
       GPA: 5.0
     }
+  },
+  ,
+  {
+    regNo: '20191161772',
+    semester: 'First Semester',
+    level: '100',
+    result: {
+      courses: [
+        { courseCode: 'CSC201', grade: 'A' },
+        { courseCode: 'PHY201', grade: 'A' },
+        { courseCode: 'MTH201', grade: 'A' },
+      ],
+      GPA: 5.0
+    }
+  },
+  {
+    regNo: '20191161772',
+    semester: 'First Semester',
+    level: '200',
+    result: {
+      courses: [
+        { courseCode: 'CSC201', grade: 'A' },
+        { courseCode: 'PHY201', grade: 'A' },
+        { courseCode: 'MTH201', grade: 'A' },
+      ],
+      GPA: 5.0
+    }
+  },
+  {
+    regNo: '20191161772',
+    semester: 'First Semester',
+    level: '300',
+    result: {
+      courses: [
+        { courseCode: 'CSC201', grade: 'A' },
+        { courseCode: 'PHY201', grade: 'A' },
+        { courseCode: 'MTH201', grade: 'A' },
+      ],
+      GPA: 5.0
+    }
+  },
+  {
+    regNo: '20191161772',
+    semester: 'First Semester',
+    level: '400',
+    result: {
+      courses: [
+        { courseCode: 'CSC201', grade: 'A' },
+        { courseCode: 'PHY201', grade: 'A' },
+        { courseCode: 'MTH201', grade: 'A' },
+      ],
+      GPA: 5.0
+    }
+  },
+  {
+    regNo: '20191161772',
+    semester: 'First Semester',
+    level: '500',
+    result: {
+      courses: [
+        { courseCode: 'CSC201', grade: 'A' },
+        { courseCode: 'PHY201', grade: 'A' },
+        { courseCode: 'MTH201', grade: 'A' },
+      ],
+      GPA: 5.0
+    }
   }
 ];
 
