@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Checker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Result Checker Logo">
+                <h1>Result Checker</h1>
+            </div>
+            <ul>
+                <li class="active"><a href="#">Home</a></li>
+                <li class="navCheckResult"><a href="#">Check Results</a></li>
+                <li class="navLogin"><a href="#">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Log In</h2>
+                <p>Welcome, Login to Access Your Results</p>
+                <form id="login-form">
+                    <div class="inputCtn">
+                        <label for="regNo">Reg Number</label>
+                        <input type="text" id="regNo" placeholder="Reg Number">
+                    </div>
+                    <div class="inputCtn">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn-login">Log In</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Change Password Modal -->
+        <div id="pwdModal" class="pwdModal">
+            <div class="modal-content">
+                <span class="pwdClose">&times;</span>
+                <h2>Change password</h2>
+                <p>Provide a complex password for strong security</p>
+                <form id="change-password-form">
+                    <div class="inputCtn">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" placeholder="New Password" required>
+                        <button type="submit">Change Password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Facial Registration Modal -->
+        <div id="facialRegistrationModal" class="faceModal">
+            <div class="modal-content">
+                <span class="faceClose">&times;</span>
+                <h2>Facial Registration</h2>
+                <p>Align your face with the frame and ensure proper lighting for accurate capture.</p>
+                <p class="holdStill">Please hold still!</p>
+                <div class="camera-feed faceContainer">
+                    <video id="video" autoplay></video>
+                    <canvas id="overlay"></canvas>
+                </div>
+                <button id="capture-face" type="button">Register Your Face</button>
+            </div>
+        </div>
+
+        <!-- Check Result Modal -->
+        <div id="checkResultModal" class="checkResultModal">
+            <div class="modal-content">
+                <span class="checkResultClose">&times;</span>
+                    <!-- Check Result Section -->
+                <div class="result-checker-container">
+                        <div class="form-section">
+                            <h2>Select In Your Level And Semester</h2>
+                            <form id="result-form">
+                                <div class="chooseLevel">
+                                    <label for="level">Level</label>
+                                    <select id="level">
+                                        <option value="100">100</option>
+                                        <option value="200">200</option>
+                                        <option value="300" selected>300</option>
+                                        <option value="400">400</option>
+                                        <option value="500">500</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="chooseSemester">
+                                    <label for="semester">Semester</label>
+                                    <select id="semester">
+                                        <option value="First Semester" selected>First semester</option>
+                                        <option value="Second Semester">Second semester</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="checkResultBtn">Check Result</button>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Facial Verification Modal -->
+        <div id="facialVerificationModal" class="faceVerifyModal">
+            <div class="modal-content">
+                <span class="faceVerifyClose">&times;</span>
+                <h2>Facial Verification</h2>
+                <p>Align your face with the frame and ensure proper lighting for accurate capture.</p>
+                <p class="holdStill">Please hold still!</p>
+                <div class="camera-feed faceContainer">
+                    <!-- Webcam feed for facial verification -->
+                    <video id="video2" autoplay></video>
+                    <canvas id="overlay2"></canvas>
+                </div>
+                <button id="verify-face">Verify Your Face</button>
+            </div>
+        </div>
+
+        <div class="heroCtn">
+            <div class="hero-content">
+                <h2>Check Your Exam Results Now.</h2>
+                <p>Easily access your academic results with just your student ID.</p>
+                <div class="buttons">
+                    <button class="checkResultButton"><a href="#">Check Result</a></button>
+                    <button class="loginBtn"><a href="#">Log In</a></button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/images/student-image.png" alt="Student Image">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="marqueeCtn">
+            <marquee>
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+                This website was built by Buzz brain. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHM102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTH102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GST108 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STA211 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHY102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG102 Result is out &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENG103 Result is out
+            </marquee>
+        </div>
+    </footer>
+
+
+
+    <script src="js/face-api.min.js"></script>
+    <script src="js/script.js"></script>
+    <script type="module" src="js/facial_registration.js"></script>
+    <script type="module" src="js/facial_verification.js"></script>
+</body>
+</html>

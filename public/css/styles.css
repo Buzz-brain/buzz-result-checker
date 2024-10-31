@@ -1,0 +1,627 @@
+/* General Styles */
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.border {
+    border: 1px solid red;
+}
+
+header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    height: 12vh;
+}
+nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    margin-left: 20px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+}
+
+ul li {
+    font-size: 1.3rem;
+}
+ul li:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+ul li.active {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+
+/* Hero Section */
+.hero { 
+    background-color: #031694;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.heroCtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.hero-content {
+    width: 50%;
+    padding-left: 50px;
+    border-bottom: white;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    color: #f0f0f5;
+    margin-bottom: -15px;
+}
+
+.hero-content p {
+    font-size: 2rem;
+    width: 90%;
+    color: #cecece;
+}
+
+.hero-image img {
+    width: 800px;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+}
+.buttons button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: white;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.buttons a {
+    text-decoration: none;
+    color: #031694;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+footer{
+    background-color: rgb(14, 13, 13);
+    height: 14vh;
+    margin-top: -7vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.marqueeCtn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+footer marquee{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Modal General Styles */
+.modal, .faceModal, .checkResultModal, .pwdModal, .faceVerifyModal {
+    display: none;  
+    /* display: flex; */
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it's on top */
+}
+
+/* Modal Content Styles */
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    position: relative;
+    animation: slideIn 0.5s ease-out; /* Smooth animation */
+}
+
+/* Modal Close Button */
+.modal-content .close, 
+.modal-content .faceClose, 
+.modal-content .checkResultClose, 
+.modal-content .pwdClose,
+.modal-content .faceVerifyClose {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Login Modal Specific Styles */
+#loginModal .modal-content {
+    max-width: 400px;
+    padding: 30px;
+    background-color: white;
+}
+
+#loginModal h2 {
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#loginModal p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.inputCtn {
+    width: 100%;
+}
+.inputCtn label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#loginModal input {
+    width: 93.5%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#loginModal button {
+    width: 100%;
+    padding: 12px;
+    background-color: #031694;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#loginModal button:hover {
+    background-color: #031694;
+}
+
+/* Facial Verification Modal Specific Styles */
+
+#facialRegistrationModal .modal-content {
+    max-width: 450px;
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: white;
+}
+
+#facialRegistrationModal h2 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#facialRegistrationModal p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#facialRegistrationModal .camera-feed {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 300px;
+    border: 4px solid #031694;
+    border-radius: 8px;
+}
+
+#facialRegistrationModal .camera-feed img {
+    width: 100%;
+    height: 300px;
+} 
+
+#facialRegistrationModal button {
+    width: 100%;
+    padding: 12px;
+    background-color: #031694;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#facialRegistrationModal button:hover {
+    background-color: #031694;
+}
+
+/* Animation for Modal */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Password modal */
+
+#pwdModal .modal-content {
+    max-width: 400px;
+    padding: 30px;
+    background-color: white;
+}
+
+#pwdModal h2 {
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#pwdModal p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.inputCtn {
+    width: 100%;
+}
+.inputCtn label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#pwdModal input {
+    width: 93.5%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#pwdModal button {
+    width: 100%;
+    padding: 12px;
+    background-color: #031694;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#pwdModal button:hover {
+    background-color: #031694;
+}
+
+/* Check result modal */
+.checkResultBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #031694;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.checkResultModal form {
+    width: 80%;
+    margin: auto;
+}
+.checkResultModal h2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.chooseLevel,
+.chooseSemester {
+    margin-bottom: 30px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+.chooseLevel label,
+.chooseSemester label {
+    font-size: 1.5rem;
+}
+.chooseLevel select,
+.chooseSemester select {
+    font-size: 1.3rem;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 7px;
+    padding: 0 3px;
+}
+
+
+
+/* Facial Verification Modal Specific Styles */
+
+#facialVerificationModal .modal-content {
+    max-width: 450px;
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: white;
+}
+
+#facialVerificationModal h2 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#facialVerificationModal p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#facialVerificationModal .camera-feed {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 300px;
+    border: 4px solid #031694;
+    border-radius: 8px;
+}
+
+#facialVerificationModal .camera-feed img {
+    width: 100%;
+    height: 300px;
+} 
+
+#facialVerificationModal button {
+    width: 100%;
+    padding: 12px;
+    background-color: #031694;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#facialVerificationModal button:hover {
+    background-color: #031694;
+}
+
+
+
+
+.faceContainer {
+    position: relative;
+    display: inline-block;
+    width: 640px; 
+    height: 480px;
+    border: 2px solid #ccc;
+    background-color: white;
+}
+video, canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure both are the same width */
+    height: 100%; /* Ensure both are the same height */
+}
+
+
+
+
+/* General Styling */
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+} */
+
+/* nav {
+    background-color: #3D3D3D;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+/* nav .logo {
+    color: white;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5em;
+    background-color: #3D3D3D;
+    color: white;
+}
+
+.home-container h1 {
+    font-size: 2.5em;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 1em 2em;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #0D3DFF;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #0D3DFF;
+}
+
+/* Modal Styling */
+/* .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+}
+
+.modal-content h2 {
+    margin: 0 0 10px;
+}
+
+.modal-content p {
+    margin: 10px 0;
+}
+
+.modal-content input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.success-icon, .failure-icon {
+    font-size: 5em;
+    color: green;
+}
+
+.failure-icon {
+    color: red;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+} */
+
+/* Result Container Styling */
+/* .result-container {
+    padding: 2em;
+    background-color: white;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    padding: 1em;
+    border: 1px solid #ddd;
+}
+
+.no-result-container {
+    padding: 2em;
+    background-color: white;
+    text-align: center;
+}
+
+.error-icon {
+    font-size: 5em;
+    color: red;
+}  */
