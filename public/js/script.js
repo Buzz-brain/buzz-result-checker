@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', async () => {
 // Login button, navbutton, modal and close button
 const loginBtn = document.getElementsByClassName("loginBtn")[0];
 const navLogin = document.getElementsByClassName("navLogin")[0];
@@ -169,5 +170,7 @@ document.getElementById('result-form').addEventListener('submit', async function
     } else {
         alert('Error during verification process.');
     }
+});
+
 });
 
