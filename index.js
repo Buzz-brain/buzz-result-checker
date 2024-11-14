@@ -11,7 +11,7 @@ dotenv.config();
 const authRoutes = require('./routes/auth');
 const faceRoutes = require('./routes/registerFace');
 const verifyRoutes = require('./routes/verifyFace');
-const preregisterRoutes = require('./routes/preRegister');
+const preregisterRoutes = require('./routes/preregister');
 const resultVerificationRoutes = require('./routes/verifyResult');
 
 
