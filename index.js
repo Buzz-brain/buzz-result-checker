@@ -51,11 +51,11 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.log(err));
 
 // Routes
-app.use('https://result-checker-eta.vercel.app/api/auth', authRoutes);
-app.use('https://result-checker-eta.vercel.app/api/auth', faceRoutes);
-app.use('https://result-checker-eta.vercel.app/api/auth', verifyRoutes);
-app.use('https://result-checker-eta.vercel.app/api/auth', preregisterRoutes);
-app.use('https://result-checker-eta.vercel.app/api/auth', resultVerificationRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/auth', faceRoutes);
+app.use('/api/auth', verifyRoutes);
+app.use('/api/auth', preregisterRoutes);
+app.use('/api/auth', resultVerificationRoutes);
 
 
 const PORT = process.env.PORT || 4000;
