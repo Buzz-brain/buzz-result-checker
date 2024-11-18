@@ -1,13 +1,106 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-  }
+    box-sizing: border-box;
+}
+
+  header {
+    background-color: #031694;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
   
+main {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+section {
+    border: 1px solid #ddd;
+    padding: 1em;
+}
+section h1 {
+    color: black;
+}
+
+.confirm-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5em;
+    border: none;
+    cursor: pointer;
+}
+
+#previewContainer {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+#notifications {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    width: 300px;
+}
+
+.notification {
+    background-color: #031694;
+    color: white;
+    padding: 1em;
+    margin-bottom: 0.5em;
+}
+
+
+.results-management table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+.results-management th, .results-management td {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.results-management button {
+    padding: 0.3em 0.6em;
+    margin: 0 0.2em;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #ffcc00;
+    color: #000;
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
   h1 {
     text-align: center;
-    color: #333;
+    color: #fff;
     margin-top: 20px;
   }
   
@@ -40,7 +133,7 @@ body {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #031694;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -67,3 +160,23 @@ body {
     color: #27ae60;
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

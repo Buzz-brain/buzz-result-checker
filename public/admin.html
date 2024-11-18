@@ -1,52 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Preregister Students</title>
-  <link rel="stylesheet" href="/css/admin.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admin.css">
 </head>
+
 <body>
-  <h1>Admin - Preregister Students</h1>
-  <form id="preregisterForm">
-    <label for="regNo">Registration Number:</label>
-    <input type="text" id="regNo" name="regNo" required>
-    <br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-    <br>
-    <button type="submit">Preregister</button>
-  </form>
+    <header>
+        <h1>Admin Dashboard - Result Management</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">View Students</a></li>
+                <li><a href="#">Upload Results</a></li>
+                <li><a href="#">Export Results</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Dashboard Summary Section -->
+        <!-- <section class="dashboard-summary">
+            <h2>Dashboard Summary</h2>
+            <p><strong>Total Students:</strong> <span id="totalStudents">120</span></p>
+            <p><strong>Total Courses:</strong> <span id="totalCourses">30</span></p>
+            <p><strong>Results Uploaded:</strong> <span id="resultsUploaded">500</span></p>
+            <button onclick="downloadResults()">Export All Results</button>
+        </section> -->
 
-  <p id="message"></p>
+        <!-- View All Students Section -->
+        <!-- <section class="student-list">
+            <h2>Registered Students</h2>
+            <div id="studentsContainer"></div>
+        </section> -->
 
-  <script>
-    document.getElementById('preregisterForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
+        <section>
+            <h1>Preregister Students</h1>
+            <form id="preregisterForm">
+                <label for="regNo">Registration Number:</label>
+                <input type="text" id="regNo" name="regNo" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <button type="submit">Preregister</button>
+            </form>
+            <p id="message"></p>
+        </section>
 
-      const regNo = document.getElementById('regNo').value;
-      const password = document.getElementById('password').value;
 
-      try {
-        const response = await fetch('/api/auth/preregister', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ regNo, password })
+        <!-- Upload Section -->
+        <!-- <section class="upload-section">
+            <h2>Upload Results</h2>
+            <form id="uploadForm">
+                <label for="semester">Semester:</label>
+                <select id="semester">
+                    <option value="first">First Semester</option>
+                    <option value="second">Second Semester</option>
+                </select>
+
+                <label for="level">Level:</label>
+                <select id="level">
+                    <option value="100">100 Level</option>
+                    <option value="200">200 Level</option>
+                </select>
+
+                <label for="course">Course:</label>
+                <input type="text" id="course" placeholder="Enter Course Code">
+
+                <input type="file" id="fileUpload" accept=".xlsx" />
+                <button type="button" onclick="previewFile()">Preview Results</button>
+                <div id="previewContainer"></div>
+                <button type="button" onclick="confirmUpload()" class="confirm-btn">Confirm Upload</button>
+            </form>
+        </section> -->
+
+        <!-- Notifications Section -->
+        <!-- <div id="notifications"></div> -->
+
+
+        <!-- Result Selection Form -->
+        <!-- <section class="result-selection">
+            <h2>Select Results to Manage</h2>
+            <form id="resultSelectForm">
+                <label for="semester">Semester:</label>
+                <select id="semester" name="semester">
+                    <option value="1">First Semester</option>
+                    <option value="2">Second Semester</option>
+                </select>
+
+                <label for="level">Level:</label>
+                <select id="level" name="level">
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                </select>
+
+                <label for="course">Course:</label>
+                <select id="course" name="course">
+                </select>
+
+                <button type="button" onclick="loadSelectedResults()">View Results</button>
+            </form>
+        </section> -->
+
+        <!-- Results Management Table -->
+        <!-- <section class="results-management">
+            <h2>Manage Uploaded Results</h2>
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>Reg. No</th>
+                        <th>Course Code</th>
+                        <th>Grade</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section> -->
+
+
+    </main>
+
+    <script>
+        document.getElementById('preregisterForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const regNo = document.getElementById('regNo').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/api/auth/preregister', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ regNo, password })
+                });
+
+                const result = await response.json();
+                document.getElementById('message').innerText = result.message;
+
+                if (response.status === 201) {
+                    document.getElementById('preregisterForm').reset();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('message').innerText = 'An error occurred. Please try again.';
+            }
         });
+    </script>
+    <script src="admin.js"></script>
 
-        const result = await response.json();
-        document.getElementById('message').innerText = result.message;
-
-        if (response.status === 201) {
-          document.getElementById('preregisterForm').reset();
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        document.getElementById('message').innerText = 'An error occurred. Please try again.';
-      }
-    });
-  </script>
 </body>
+
 </html>

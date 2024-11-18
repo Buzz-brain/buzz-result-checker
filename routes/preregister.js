@@ -2,6 +2,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const Student = require('../models/Student');
+// const adminMiddleware = require('../middleware/authAdmin');
 const router = express.Router();
 
 // Preregister a student
