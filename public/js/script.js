@@ -147,6 +147,8 @@ document.getElementById('result-form').addEventListener('submit', async function
         body: JSON.stringify({ semester, level}),
     });
 
+    console.log(response)
+
     // Check if the response is OK (status code in the range 200-299)
     if (!response.ok) {
         const errorText = await response.text(); // Get error text
