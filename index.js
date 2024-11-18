@@ -5,6 +5,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 
 dotenv.config();
 
@@ -17,15 +18,21 @@ const resultVerificationRoutes = require('./routes/verifyResult');
 
 const app = express();
 
-// Use express-session middleware
+app.set('trust proxy', 1); // For secure cookies behind a proxy
+
 app.use(session({
-  secret: 'your-secret-key', // Change this to a random string
+  secret: 'your-secret-key',
   resave: false,
   saveUninitialized: true,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGO_URI,
+    collectionName: 'sessions',
+  }),
   cookie: {
-    secure: true, // Set to true if using HTTPS
-    maxAge: 24 * 60 * 60 * 1000 // Session expiration time (1 day)
-  }
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000,
+  },
 }));
 
 app.use(express.json());
