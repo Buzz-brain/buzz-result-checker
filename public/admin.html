@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Preregister Students</title>
+</head>
+<body>
+  <h1>Admin - Preregister Students</h1>
+  <form id="preregisterForm">
+    <label for="regNo">Registration Number:</label>
+    <input type="text" id="regNo" name="regNo" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <button type="submit">Preregister</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    document.getElementById('preregisterForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const regNo = document.getElementById('regNo').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        const response = await fetch('/api/auth/preregister', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ regNo, password })
+        });
+
+        const result = await response.json();
+        document.getElementById('message').innerText = result.message;
+
+        if (response.status === 201) {
+          document.getElementById('preregisterForm').reset();
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('message').innerText = 'An error occurred. Please try again.';
+      }
+    });
+  </script>
+</body>
+</html>

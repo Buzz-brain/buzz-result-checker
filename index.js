@@ -51,6 +51,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Serve the admin.html file
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'admin.html'));
+});
+
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
