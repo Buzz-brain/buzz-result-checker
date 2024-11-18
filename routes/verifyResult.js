@@ -150,7 +150,6 @@ const mockResults = [
       GPA: 5.0
     }
   },
-  ,
   {
     regNo: '20191161772',
     semester: 'First Semester',
@@ -226,7 +225,7 @@ router.post('/verifyResult', (req, res) => {
 
   console.log(semester, level, regNo)
   // Find the result based on the provided regNo, semester, and level
-  const studentResult = mockResults.find(result => 
+  const studentResult = mockResults.find(result =>
     result.regNo === regNo &&
     result.semester === semester &&
     result.level === level
