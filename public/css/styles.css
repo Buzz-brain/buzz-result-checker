@@ -33,8 +33,11 @@ nav {
 }
 
 .logo h1 {
-    font-size: 1rem;
-    margin-left: 7px;
+    font-size: .8rem;
+    margin-left: 5px;
+}
+.logo img {
+    width: 50px;
 }
 
 ul {
@@ -42,11 +45,11 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 280px;
+    width: 250px;
 }
 
 ul li {
-    font-size: .9rem;
+    font-size: .7rem;
 }
 ul li:hover {
     text-decoration: underline;
@@ -635,8 +638,8 @@ table th, table td {
 
 @media (min-width: 600px) {
     .logo h1 {
-        font-size: 1.5rem;
-        margin-left: 20px;
+        font-size: 1.2rem;
+        margin-left: 10px;
     }
     .hero-image {
         display: flex;
