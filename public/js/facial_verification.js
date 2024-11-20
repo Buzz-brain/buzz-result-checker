@@ -4,25 +4,18 @@
 console.log("Loading face-api.js models...");
 const video2 = document.getElementById('video2');
 
-Promise.all([
-    await faceapi.nets.tinyFaceDetector.loadFromUri('https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/tiny_face_detector_model-weights_manifest.json'),
-    await faceapi.nets.faceLandmark68Net.loadFromUri('https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/face_landmark_68_model-weights_manifest.json'),
-    await faceapi.nets.faceRecognitionNet.loadFromUri('https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/face_recognition_model-weights_manifest.json'),
-    await faceapi.nets.faceExpressionNet.loadFromUri('https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/face_expression_model-weights_manifest.json')
-
-    // Get models locally
-    // faceapi.nets.ssdMobilenetv1.loadFromUri('/models'),
-    // faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
-    // faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-    // faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
-    // faceapi.nets.faceExpressionNet.loadFromUri('/models')
-]).then(() => {
-    console.log("Models loaded successfully.");
-    startVideo();
-}).catch(err => {
-    console.error('Error loading models:', err);
-    alert('Error loading models. Please try refreshing the page or check your model paths.');
-});
+// Promise.all([
+//     await faceapi.nets.tinyFaceDetector.loadFromUri('https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/tiny_face_detector_model-weights_manifest.json'),
+//     await faceapi.nets.faceLandmark68Net.loadFromUri('https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/face_landmark_68_model-weights_manifest.json'),
+//     await faceapi.nets.faceRecognitionNet.loadFromUri('https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/face_recognition_model-weights_manifest.json'),
+//     await faceapi.nets.faceExpressionNet.loadFromUri('https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/face_expression_model-weights_manifest.json')
+// ]).then(() => {
+//     console.log("Models loaded successfully.");
+//     startVideo();
+// }).catch(err => {
+//     console.error('Error loading models:', err);
+//     alert('Error loading models. Please try refreshing the page or check your model paths.');
+// });
 
 // Start video from user's webcam
 function startVideo() {
