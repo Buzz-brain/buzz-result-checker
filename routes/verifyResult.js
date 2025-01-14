@@ -151,7 +151,7 @@ const mockResults = [
     }
   },
   {
-    regNo: '20191161772',
+    regNo: '20191100010',
     semester: 'First Semester',
     level: '100',
     result: {
@@ -164,9 +164,9 @@ const mockResults = [
     }
   },
   {
-    regNo: '20191161772',
+    regNo: '20191100011',
     semester: 'First Semester',
-    level: '200',
+    level: '100',
     result: {
       courses: [
         { courseCode: 'CSC201', grade: 'A' },
@@ -177,9 +177,9 @@ const mockResults = [
     }
   },
   {
-    regNo: '20191161772',
+    regNo: '20191100012',
     semester: 'First Semester',
-    level: '300',
+    level: '100',
     result: {
       courses: [
         { courseCode: 'CSC201', grade: 'A' },
@@ -190,9 +190,9 @@ const mockResults = [
     }
   },
   {
-    regNo: '20191161772',
+    regNo: '20191100013',
     semester: 'First Semester',
-    level: '400',
+    level: '100',
     result: {
       courses: [
         { courseCode: 'CSC201', grade: 'A' },
@@ -203,9 +203,22 @@ const mockResults = [
     }
   },
   {
-    regNo: '20191161772',
+    regNo: '20191100014',
     semester: 'First Semester',
-    level: '500',
+    level: '100',
+    result: {
+      courses: [
+        { courseCode: 'CSC201', grade: 'A' },
+        { courseCode: 'PHY201', grade: 'A' },
+        { courseCode: 'MTH201', grade: 'A' },
+      ],
+      GPA: 5.0
+    }
+  },
+  {
+    regNo: '20191100015',
+    semester: 'First Semester',
+    level: '100',
     result: {
       courses: [
         { courseCode: 'CSC201', grade: 'A' },

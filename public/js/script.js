@@ -1,28 +1,3 @@
-document.addEventListener('DOMContentLoaded', async () => {
-// Login button, navbutton, modal and close button
-const loginBtn = document.getElementsByClassName("loginBtn")[0];
-const navLogin = document.getElementsByClassName("navLogin")[0];
-const modal = document.getElementsByClassName("modal")[0];
-const close = document.getElementsByClassName("close")[0];
-
-// Change password modal and close button
-const pwdModal = document.getElementsByClassName("pwdModal")[0];
-const pwdClose = document.getElementsByClassName("pwdClose")[0];
-
-// Check result button, navbutton, modal and close button
-const checkResultButton = document.getElementsByClassName("checkResultButton")[0];
-const navCheckResult = document.getElementsByClassName("navCheckResult")[0];
-const checkResultModal = document.getElementsByClassName("checkResultModal")[0];
-const checkResultClose = document.getElementsByClassName("checkResultClose")[0];
-
-// Face registration modal and close btn
-const faceModal = document.getElementsByClassName("faceModal")[0];
-const faceClose = document.getElementsByClassName("faceClose")[0];
-
-// Face verification modal and close btn
-const faceVerifyModal = document.getElementsByClassName("faceVerifyModal")[0];
-const faceVerifyClose = document.getElementsByClassName("faceVerifyClose")[0];
-
 // For login
 loginBtn.addEventListener("click", () => {
     modal.style.display = "flex";
@@ -46,6 +21,7 @@ close.addEventListener("click", () => {
 })
 faceClose.addEventListener("click", () => {
     faceModal.style.display = "none";
+    stopVideoAndRemoveCameraAccess();
 })
 checkResultClose.addEventListener("click", () => {
     checkResultModal.style.display = "none";
@@ -55,6 +31,7 @@ pwdClose.addEventListener("click", () => {
 })
 faceVerifyClose.addEventListener("click", () => {
     faceVerifyModal.style.display = "none";
+    stopVideoAndRemoveCameraAccess();
 })
 
 
@@ -90,6 +67,7 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
         checkResultModal.style.display = "none";
         faceVerifyModal.style.display = "none";
         faceModal.style.display = "flex";
+        startVideo();
     }
 
     // Case 3: If both password is changed and facial data is registered, redirect to result checker
@@ -127,6 +105,7 @@ document.getElementById('change-password-form').addEventListener('submit', async
         checkResultModal.style.display = "none";
         faceVerifyModal.style.display = "none";
         faceModal.style.display = "flex";
+        startVideo();
     }
 });
 
@@ -157,6 +136,7 @@ document.getElementById('result-form').addEventListener('submit', async function
         return;
     } else {
         alert('Result found proceed to confirm facial identity');
+        startVideo2()
     }
 
     // Parse the JSON response
@@ -172,7 +152,5 @@ document.getElementById('result-form').addEventListener('submit', async function
     } else {
         alert('Error during verification process.');
     }
-});
-
 });
 

@@ -1,24 +1,9 @@
-
-
 // Load models for face detection and recognition
-console.log("Loading face-api.js models...");
+console.log("Model already loaded...");
 const video2 = document.getElementById('video2');
 
-// Promise.all([
-//     await faceapi.nets.tinyFaceDetector.loadFromUri('https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/tiny_face_detector_model-weights_manifest.json'),
-//     await faceapi.nets.faceLandmark68Net.loadFromUri('https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/face_landmark_68_model-weights_manifest.json'),
-//     await faceapi.nets.faceRecognitionNet.loadFromUri('https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/face_recognition_model-weights_manifest.json'),
-//     await faceapi.nets.faceExpressionNet.loadFromUri('https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/face_expression_model-weights_manifest.json')
-// ]).then(() => {
-//     console.log("Models loaded successfully.");
-//     startVideo();
-// }).catch(err => {
-//     console.error('Error loading models:', err);
-//     alert('Error loading models. Please try refreshing the page or check your model paths.');
-// });
-
 // Start video from user's webcam
-function startVideo() {
+function startVideo2() {
     navigator.mediaDevices.getUserMedia({ video: {} })
         .then(stream => {
             video2.srcObject = stream;
@@ -44,12 +29,11 @@ video2.addEventListener('play', () => {
         // Detect faces, landmarks, and expressions
         const detections = await faceapi.detectSingleFace(video2, new faceapi.TinyFaceDetectorOptions())
             .withFaceLandmarks()
-            .withFaceExpressions()
 
         // Check if detections are found
         if (!detections) {
             console.warn("No face detected");
-            return;  // Skip the rest of the loop if no face is detected
+            return; 
         }
         // Resize the detection to match the video display size
         const resizedDetections = faceapi.resizeResults(detections, displaySize);
@@ -61,10 +45,9 @@ video2.addEventListener('play', () => {
         // Draw detections: landmarks, boxes, and expressions
         faceapi.draw.drawDetections(canvas, resizedDetections);
         faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
-        faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
 
         // Log the detections for debug purposes
-        console.log(resizedDetections);
+        // console.log(resizedDetections);
     }, 100);  // Continuously update every 100ms
 });
 
