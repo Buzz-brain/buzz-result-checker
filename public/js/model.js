@@ -148,6 +148,8 @@ document.getElementById('capture-face').addEventListener('click', async () => {
     // Check if any face was detected
     if (!detections) {
         alert('No face detected. Please try again.');
+        registerFace.innerText = "Capture Face";
+        registerFace.style.backgroundColor = "";
         return;
     }
 
@@ -191,6 +193,8 @@ document.getElementById('verify-face').addEventListener('click', async function 
     // Check if any face was detected
     if (!detections) {
         alert('No face detected. Please try again.');
+        verifyFace.innerText = "Verify Face";
+        verifyFace.style.backgroundColor = "";
         return;
     }
 
@@ -210,7 +214,12 @@ document.getElementById('verify-face').addEventListener('click', async function 
         const result = await response.json();
         if (result.message === 'Facial recognition successful. Access granted.') {
             alert("Facial recognition successful. Access granted.");
-            window.location.href = 'result.html';  // Redirect to result page
+
+            // Store the result data in local storage
+            localStorage.setItem('resultData', JSON.stringify(result.result));
+
+            // Redirect to the result page
+            window.location.href = '/result';
         } else {
             alert('Facial recognition failed. Access denied.');
         }

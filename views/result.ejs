@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Result</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/result.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="images/logo.png" alt="Result Checker Logo">
+        <h1>Result Checker</h1>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li class="active"><a href="#">Check Results</a></li>
+        <li class="navLogin"><a href="#">Log In</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Check Result Section -->
+  <div class="result-checker-container">
+    <!-- Result Table -->
+    <div class="result-details">
+      <div class="student-info" id="student-info"></div>
+      <table>
+        <thead>
+          <tr>
+            <th>COURSE CODE</th>
+            <th>COURSE TITLE</th>
+            <th>CREDIT UNITS</th>
+            <th>GRADE</th>
+          </tr>
+        </thead>
+        <tbody id="result-table-body"></tbody>
+      </table>
+      <div class="total-summary" id="total-summary"></div>
+    </div>
+  </div>
+  <script>
+    // Retrieve the result data from local storage
+    const resultData = JSON.parse(localStorage.getItem('resultData'));
+
+    if (resultData) {
+      // Display the student information
+      const studentInfoElement = document.getElementById('student-info');
+      studentInfoElement.innerHTML = `
+        <p><strong>FULL NAME:</strong> ${resultData.studentName}</p>
+        <p><strong>REG. NO:</strong> ${resultData.regNo}</p>
+        <p><strong>DEPARTMENT:</strong> ${resultData.department}</p>
+        <p><strong>SCHOOL:</strong> ${resultData.school}</p>
+        <p><strong>LEVEL:</strong> ${resultData.level}</p>
+        <p><strong>SEMESTER:</strong> ${resultData.semester}</p>
+      `;
+
+      // Display the result table
+      const tableBodyElement = document.getElementById('result-table-body');
+      resultData.courses.forEach(course => {
+        const row = `
+          <tr>
+            <td>${course.code}</td>
+            <td>${course.title}</td>
+            <td>${course.creditUnits}</td>
+            <td>${course.grade}</td>
+          </tr>
+        `;
+        tableBodyElement.insertAdjacentHTML('beforeend', row);
+      });
+
+      // Display the total summary
+      const totalSummaryElement = document.getElementById('total-summary');
+      totalSummaryElement.innerHTML = `
+        <p>Total Unit = ${resultData.totalUnits} | GPA = ${resultData.gpa}</p>
+        <button class="btn-secondary">Download GPA</button>
+      `;
+    } else {
+      alert('No result data found.');
+    }
+  </script>
+</body>
+</html>
+

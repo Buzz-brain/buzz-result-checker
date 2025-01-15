@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Result Checker Logo">
+                <h1>Result Checker</h1>
+            </div>
+            <ul>
+                <li class="active"><a href="#">Welcome</a></li>
+            </ul>
+        </nav>
+    </header>
+<div class="tab-cover">
+  <div class="tab-container">
+    <ul class="tab-nav">
+      <li class="active"><a href="#preregister-tab">Preregister</a></li>
+      <li><a href="#upload-result-tab">Upload Result</a></li>
+      <li><a href="#view-all-student-data-tab">View All Student Data</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <!-- Preregister tab -->
+      <div id="preregister-tab" class="tab-pane active">
+        <h2>Preregister Student</h2>
+        <form id="preregister-form">
+          <label for="surname">Surname:</label>
+          <input type="text" id="surname" name="surname"><br><br>
+          <label for="firstname">Firstname:</label>
+          <input type="text" id="firstname" name="firstname"><br><br>
+          <label for="regNo">Reg. No.:</label>
+          <input type="text" id="regNo" name="regNo"><br><br>
+          <label for="currentLevel">Current Level:</label>
+          <select id="currentLevel" name="currentLevel">
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <!-- Add more levels as needed -->
+          </select><br><br>
+          <label for="sex">Sex:</label>
+          <select id="sex" name="sex">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select><br><br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password"><br><br>
+          <button id="preregister-button">Preregister</button>
+        </form>
+      </div>
+
+      <!-- Upload Result tab -->
+      <div id="upload-result-tab" class="tab-pane">
+        <h2>Upload Result</h2>
+        <form id="upload-form">
+          <input type="file" id="file-upload" accept=".xlsx">
+          <button id="upload-button">Upload Results</button>
+        </form>
+        <!-- Level, Course Code, and Semester selection section -->
+        <section>
+          <h2>Select Level, Course Code, and Semester</h2>
+          <form id="select-form">
+            <label for="level">Level:</label>
+            <select id="level" name="level">
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <!-- Add more levels as needed -->
+            </select>
+            <label for="course-code">Course Code:</label>
+            <select id="course-code" name="course-code">
+              <option value="101">101</option>
+              <option value="102">102</option>
+              <!-- Course codes will be populated dynamically based on the selected level -->
+            </select>
+            <label for="semester">Semester:</label>
+            <select id="semester" name="semester">
+              <option value="1">First Semester</option>
+            <option value="2">Second Semester</option>
+            </select>
+            </form>
+            </section>
+            <!-- Preview container -->
+            <div id="preview-container"></div>
+            </div>
+
+      <!-- View All Student Data tab -->
+      <div id="view-all-student-data-tab" class="tab-pane">
+        <h2>View All Student Data</h2>
+        <table id="student-data-table">
+          <thead>
+            <tr>
+              <th>Reg. No.</th>
+              <th>Surname</th>
+              <th>Firstname</th>
+              <th>Level</th>
+              <th>Sex</th>
+              <th>hasFacialData</th>
+              <th>passwordChanged</th>
+            </tr>
+          </thead>
+          <tbody id="student-data-table-body">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.17.3/dist/xlsx.full.min.js"></script>
+  <script>
+    const tabNav = document.querySelector('.tab-nav');
+const tabPanes = document.querySelectorAll('.tab-pane');
+
+tabNav.addEventListener('click', (e) => {
+  if (e.target.tagName === 'A') {
+    const tabId = e.target.getAttribute('href');
+    const tabPane = document.querySelector(tabId);
+
+    // Remove active class from all tabs
+    tabNav.querySelectorAll('li').forEach((tab) => {
+      tab.classList.remove('active');
+    });
+
+    // Add active class to the current tab
+    e.target.parentNode.classList.add('active');
+
+    // Hide all tab panes
+    tabPanes.forEach((pane) => {
+      pane.classList.remove('active');
+    });
+
+    // Show the current tab pane
+    tabPane.classList.add('active');
+  }
+});
+
+  </script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
+
+
+
+  
+  
+ 

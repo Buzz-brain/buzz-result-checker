@@ -1,5 +1,5 @@
 const express = require('express');
-const Student = require('../models/Student');
+const Student = require('../model/Student');
 const faceapi = require('face-api.js'); 
 const router = express.Router();
 const FaceMatcher = faceapi.FaceMatcher;  // Import with correct capitalization

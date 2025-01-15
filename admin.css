@@ -1,0 +1,182 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  header {
+    background-color: #031694;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+  
+main {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+section {
+    border: 1px solid #ddd;
+    padding: 1em;
+}
+section h1 {
+    color: black;
+}
+
+.confirm-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5em;
+    border: none;
+    cursor: pointer;
+}
+
+#previewContainer {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+#notifications {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    width: 300px;
+}
+
+.notification {
+    background-color: #031694;
+    color: white;
+    padding: 1em;
+    margin-bottom: 0.5em;
+}
+
+
+.results-management table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+.results-management th, .results-management td {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.results-management button {
+    padding: 0.3em 0.6em;
+    margin: 0 0.2em;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #ffcc00;
+    color: #000;
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+  h1 {
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #031694;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  #message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  #message.error {
+    color: #e74c3c;
+  }
+  
+  #message.success {
+    color: #27ae60;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

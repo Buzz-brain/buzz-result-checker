@@ -1,5 +1,5 @@
 const express = require('express');
-const Student = require('../models/Student');
+const Student = require('../model/Student');
 const router = express.Router();
 
 // Register Facial Data Route
