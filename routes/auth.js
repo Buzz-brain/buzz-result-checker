@@ -23,7 +23,7 @@ router.post('/login', async (req, res) => {
   req.session.regNo = regNo; // Store regNo in session
   req.session.studentId = student._id; // Store student ID for later use
 
-
+console.log(req.session.regNo)
   // Case 1: If it's the first login, ask the user to change their password
   if (!student.passwordChanged) {
     return res.status(200).json({ message: 'First-time login, please change your password', firstLogin: true });
@@ -35,7 +35,7 @@ router.post('/login', async (req, res) => {
   }
 
   // Case 3: If both password is changed and facial data is registered, redirect to result checker
-  res.status(200).json({ message: `Login successful. Redirecting to result checker. ${req.session.regNo}`, redirectToResultChecker: true });
+  res.status(200).json({ message: `Login successful. Redirecting to result checker.`, redirectToResultChecker: true });
 });
 
 // Change Password Route

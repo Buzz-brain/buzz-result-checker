@@ -108,7 +108,7 @@ video2.addEventListener('play', () => {
 
         // Check if detections are found
         if (!detections) {
-            console.warn("No face detected");
+            // console.warn("No face detected");
             return;
         }
         // Resize the detection to match the video display size
@@ -222,6 +222,8 @@ document.getElementById('verify-face').addEventListener('click', async function 
             window.location.href = '/result';
         } else {
             alert('Facial recognition failed. Access denied.');
+            verifyFace.innerText = "Verify Face";
+            verifyFace.style.backgroundColor = "";
         }
     } catch (error) {
         console.error('Error verifying face:', error);

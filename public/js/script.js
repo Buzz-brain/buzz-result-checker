@@ -141,6 +141,7 @@ document.getElementById('result-form').addEventListener('submit', async function
 
     // Parse the JSON response
 
+
     const result = await response.json();
     console.log(result)
     if (result.message === 'Proceed to face verification') {

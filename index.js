@@ -89,8 +89,6 @@ app.post('/api/upload-results', upload.fields([{ name: 'file', maxCount: 1 }, { 
     const courseCode = req.body.courseCode;
     const semester = req.body.semester;
 
-
-
     if (!file) {
       return res.status(400).send({ message: 'No file uploaded' });
     }
@@ -138,7 +136,7 @@ app.post('/api/upload-results', upload.fields([{ name: 'file', maxCount: 1 }, { 
 // Return the uploaded data in the result object
     res.send({ message: 'Results uploaded successfully!', data: data });
 
-console.log("Result Uploaded successfully")
+console.log("Result Uploaded successfully", data)
 } catch (err) {
 console.error(err);
 res.status(500).send({ message: 'Error uploading results', error: err.message });
